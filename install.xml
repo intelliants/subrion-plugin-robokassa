@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin name="robokassa">
+	<title>Robokassa</title>
+	<summary>Robokassa payment gateway integration. Allows to accept payments using 20+ payment gateways</summary>
+	<author>Intelliants LLC</author>
+	<contributor>Intelliants LLC</contributor>
+	<version>1.0.0</version>
+	<date>2015-05-29</date>
+	<category>payments</category>
+	<compatibility>3.3.3</compatibility>
+
+	<hooks>
+		<hook name="paymentButtons" type="smarty" filename="plugins/robokassa/templates/button.tpl" page_type="front"><![CDATA[]]></hook>
+	</hooks>
+
+	<pages>
+		<page url="robokassa/" name="robokassa" filename="index" service="1">Robokassa</page>
+	</pages>
+
+	<config group="financial" name="robokassa" type="divider" description="Robokassa">Robokassa</config>
+	<config group="financial" name="robokassa_merchant_login" type="text" description="Merchant login">input your merchant login</config>
+	<config group="financial" name="robokassa_merchant_password_one" type="password" description="Merchant password #1"><![CDATA[]]></config>
+	<config group="financial" name="robokassa_merchant_password_two" type="password" description="Merchant password #2"><![CDATA[]]></config>
+	<config group="financial" name="robokassa_language" type="select" description="Default language" multiple_values="en,ru">en</config>
+	<config group="financial" name="robokassa_demo" type="radio" description="Demo mode" multiple_values="0,1">1</config>
+
+	<phrases>
+		<phrase category="frontend" key="robokassa_incorrect_hash">Incorrect signature hash.</phrase>
+		<phrase category="frontend" key="robokassa_incorrect_salt">No correct transaction.</phrase>
+		<phrase category="frontend" key="robokassa_payment_done_login">Payment is successful. Thanks.</phrase>
+	</phrases>
+</plugin>
